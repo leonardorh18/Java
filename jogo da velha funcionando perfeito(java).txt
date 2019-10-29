@@ -1,0 +1,410 @@
+
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+
+
+public class JogoVelha extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private int jogadas = 0;
+	private int o = 0;
+	private int x = 0;
+	private JButton btum;
+	private JButton btdois;
+	private JButton bttres;
+	private JButton btquatro;
+	private JButton btcinco;
+	private JButton btseis;
+	private JButton btsete;
+	private JButton btoito;
+	private JButton btnove;
+	private char[][] p = new char [3][3];
+	private JLabel inf;
+	private int i, j;
+	
+	
+	private JButton Reiniciar;
+	
+	
+	
+	
+	
+	
+	
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JogoVelha frame = new JogoVelha();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
+	public void reiniciar() {
+		btum.setEnabled(false);
+		btdois.setEnabled(false);
+		bttres.setEnabled(false);
+		btquatro.setEnabled(false);
+		btcinco.setEnabled(false);
+		btseis.setEnabled(false);
+		btsete.setEnabled(false);
+		btoito.setEnabled(false);
+		btnove.setEnabled(false);
+		Reiniciar.setEnabled(true);
+		
+			
+		}
+	
+
+	public void verifica(){
+		if( p[0][0] == 'X' && p[0][1] == 'X' && p[0][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + "  Jogador O: " + o);
+			reiniciar();
+			
+		}
+		if( p[0][0] == 'O' && p[0][1] == 'O' && p[0][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+		}
+		if( p[1][0] == 'X' && p[1][1] == 'X' && p[1][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+	
+        }
+		if( p[1][0] == 'O' && p[1][1] == 'O' && p[1][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[2][0] == 'X' && p[2][1] == 'X' && p[2][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[2][0] == 'O' && p[2][1] == 'O' && p[2][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][0] == 'X' && p[1][1] == 'X' && p[2][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][0] == 'O' && p[1][1] == 'O' && p[2][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][0] == 'O' && p[1][0] == 'O' && p[2][0] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][0] == 'X' && p[1][0] == 'X' && p[2][0] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][1] == 'X' && p[1][1] == 'X' && p[2][1] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][1] == 'O' && p[1][1] == 'O' && p[2][1] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][2] == 'O' && p[1][2] == 'O' && p[2][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[0][2] == 'X' && p[1][2] == 'X' && p[2][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[2][0] == 'X' && p[1][1] == 'X' && p[0][2] == 'X' ){
+			x ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+		if( p[2][0] == 'O' && p[1][1] == 'O' && p[0][2] == 'O' ){
+			o ++;
+			inf.setText("Jogador X: " + x + " Jogador O: " + o);
+			reiniciar();
+			
+        }
+	}
+	public JogoVelha() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 491, 458);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		 btum = new JButton("");
+		btum.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (jogadas%2==0){
+					btum.setText("O");
+			        p[0][0]= 'O';
+					
+					
+				} else {
+					btum.setText("X");
+					p[0][0]= 'X';
+				}
+				jogadas++;
+			    verifica();
+			    btum.setEnabled(false);
+			}
+		});
+		btum.setBounds(41, 11, 112, 112);
+		contentPane.add(btum);
+		
+		 btdois = new JButton(" ");
+		 btdois.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {
+		 		if (jogadas%2==0){
+					btdois.setText("O");
+					jogadas++;
+					p[0][1]= 'O';
+					
+					verifica();
+				} else {
+					btdois.setText("X");
+					jogadas++;
+					p[0][1]= 'X';
+					
+					verifica();
+				}
+		 		 btdois.setEnabled(false);
+		 	}
+		 });
+		btdois.setBounds(41, 134, 112, 122);
+		contentPane.add(btdois);
+		
+		 bttres = new JButton(" ");
+		 bttres.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {
+		 		if (jogadas%2==0){
+					bttres.setText("O");
+					jogadas++;
+					p[0][2]= 'O';
+					
+					verifica();
+				} else {
+					bttres.setText("X");
+					jogadas++;
+					p[0][2]= 'X';
+					
+					verifica();
+				}
+		 		 bttres.setEnabled(false);
+		 	}
+		 });
+		bttres.setBounds(41, 267, 112, 112);
+		contentPane.add(bttres);
+		
+		 btquatro = new JButton(" ");
+		btquatro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (jogadas%2==0){
+					btquatro.setText("O");
+					jogadas++;
+					p[1][0]= 'O';
+					verifica();
+				} else {
+					btquatro.setText("X");
+					jogadas++;
+					p[1][0]= 'X';
+					verifica();
+				}
+				btquatro.setEnabled(false);
+			}
+		});
+		btquatro.setBounds(163, 11, 112, 112);
+		contentPane.add(btquatro);
+		
+		btcinco = new JButton(" ");
+		btcinco.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (jogadas%2==0){
+					btcinco.setText("O");
+					jogadas++;
+					p[1][1]= 'O';
+					verifica();
+				} else {
+					btcinco.setText("X");
+					jogadas++;
+					p[1][1]= 'X';
+					verifica();
+				}
+				btcinco.setEnabled(false);
+			}
+		});
+		btcinco.setBounds(163, 139, 112, 112);
+		contentPane.add(btcinco);
+		
+		btseis = new JButton(" ");
+		btseis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (jogadas%2==0){
+					btseis.setText("O");
+					jogadas++;
+					p[1][2]= 'O';
+					verifica();
+				} else {
+					btseis.setText("X");
+					jogadas++;
+					p[1][2]= 'X';
+					verifica();
+				}
+				btseis.setEnabled(false);
+			}
+		});
+		btseis.setBounds(163, 267, 112, 112);
+		contentPane.add(btseis);
+		
+		 btsete = new JButton(" ");
+		btsete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (jogadas%2==0){
+					btsete.setText("O");
+					jogadas++;
+					p[2][0]= 'O';
+					verifica();
+				} else {
+					btsete.setText("X");
+					jogadas++;
+					p[2][0]= 'X';
+					verifica();
+				}
+				btsete.setEnabled(false);
+			}
+		});
+		btsete.setBounds(285, 11, 112, 112);
+		contentPane.add(btsete);
+		
+		 btoito = new JButton(" ");
+		 btoito.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {
+		 		if (jogadas%2==0){
+					btoito.setText("O");
+					jogadas++;
+					p[2][1]= 'O';
+					verifica();
+				} else {
+					btoito.setText("X");
+					jogadas++;
+					p[2][1]= 'X';
+					verifica();
+				}
+		 		btoito.setEnabled(false);
+		 	}
+		 });
+		btoito.setBounds(285, 139, 112, 112);
+		contentPane.add(btoito);
+		
+		 btnove = new JButton(" ");
+		 btnove.addActionListener(new ActionListener() {
+		 	public void actionPerformed(ActionEvent arg0) {
+		 		if (jogadas%2==0){
+					btnove.setText("O");
+					jogadas++;
+					p[2][2]= 'O';
+					verifica();
+				} else {
+					btnove.setText("X");
+					jogadas++;
+					p[2][2]= 'X';
+					verifica();
+				}
+		 		btnove.setEnabled(false);
+		 	}
+		 });
+		btnove.setBounds(285, 267, 112, 112);
+		contentPane.add(btnove);
+		
+		inf = new JLabel("Informa\u00E7\u00E3o: ");
+		inf.setBounds(41, 395, 333, 14);
+		contentPane.add(inf);
+		
+		Reiniciar = new JButton("Reiniciar");
+		Reiniciar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				j=0;
+				
+				 for(int i =0; i<3; i++) {
+					 for(int j =0; j<3; j++) {
+						 p[i][j]= ' ';
+						 
+					 }
+					 j=0;
+				 }
+				 btum.setText("");
+				 btdois.setText("");
+				 bttres.setText("");
+				 btquatro.setText("");
+				 btcinco.setText("");
+				 btseis.setText("");
+				 btsete.setText("");
+				 btoito.setText("");
+				 btnove.setText("");
+				btum.setEnabled(true);
+				btdois.setEnabled(true);
+				bttres.setEnabled(true);
+				btquatro.setEnabled(true);
+				btcinco.setEnabled(true);
+				btseis.setEnabled(true);
+				btsete.setEnabled(true);
+				btoito.setEnabled(true);
+				btnove.setEnabled(true);
+				Reiniciar.setEnabled(true);
+			}
+		});
+		Reiniciar.setBounds(336, 391, 89, 23);
+		contentPane.add(Reiniciar);
+	}
+}
